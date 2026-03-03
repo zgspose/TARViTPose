@@ -1,6 +1,6 @@
 # Beyond Static Frames: Temporal Aggregate-and-Restore Vision Transformer for Human Pose Estimation
 
-This repo is the official implementation for **Beyond Static Frames: Temporal Aggregate-and-Restore Vision Transformer for Human Pose Estimation**[[arXiv](https://arxiv.org/abs/2403.19926)]. The paper has been accepted to [CVPR 2026](https://cvpr.thecvf.com/Conferences/2026).
+This repo is the official implementation for **Beyond Static Frames: Temporal Aggregate-and-Restore Vision Transformer for Human Pose Estimation**[[arXiv]]. The paper has been accepted to [CVPR 2026](https://cvpr.thecvf.com/Conferences/2026).
 
 
 
