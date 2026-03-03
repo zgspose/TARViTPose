@@ -1,0 +1,94 @@
+PRINT_FREQ: 20
+DISTANCE: 2
+WORKERS: 16
+WINDOWS_SIZE: 5
+GPUS: [0]
+SAVE_RESULTS: true
+EARLY_STOPPING:
+  PATIENCE: 8
+NAME_EXP: 'TAR-ViTPose Vit B heads=4 5 frames'
+OUTPUT_DIR: "/media/D/code/tar-vitpose/output/posetrack17/tarvitpose"
+
+DATASET:
+  NAME: "posetrack"
+  JSON_DIR: "/media/D/datasets/17/rename/jsons/"
+  IMG_DIR: "/media/D/datasets/17/rename/images_renamed/"
+  TEST_IMG_DIR: "/media/D/datasets/17/rename/images_renamed/"
+  IS_POSETRACK18: false
+  COLOR_RGB: true
+  DATASET: 'posetrack'
+  ROOT: ''
+  INPUT_TYPE: 'spatiotemporal_window'
+  BBOX_ENLARGE_FACTOR: 1.25
+
+LOSS:
+  NAME: 'JointsMSELoss' # 'JointsMSELoss' or 'JointsMSELossWithSiga' or 'PoseidonLoss'
+  USE_TARGET_WEIGHT: true
+  
+MODEL: 
+  METHOD: 'tarvitpose'
+  CHECKPOINT_FILE: './checkpoints/pretrain/pretrain_model_b.pth'
+  CONFIG_FILE: './models/vitpose/td-hm_ViTPose-base_8xb64-210e_coco-256x192.py'
+  FREEZE_HRNET_WEIGHTS: false
+  EVALUATE: true
+  INIT_WEIGHTS: true
+  BACKBONE: resnet152 # resnet50, resnet101, resnet152, resnet34, hrnet-w30, hrnet-w32, hrnet-w48
+  FREEZE_BACKBONE: false
+  NUM_JOINTS: 17
+  PRETRAINED: ''
+  TARGET_TYPE: gaussian
+  EMBED_DIM: 768 # 384, 768, 1280
+  IMAGE_SIZE:
+  # - 192
+  #  - 256
+    - 288
+    - 384
+  HEATMAP_SIZE:
+    - 72 
+    - 96
+  #  - 48
+  #  - 64
+  SIGMA: 3
+  USE_RECTIFIER: true
+  MASK_THRESHOLD: 0.2
+  NUM_LAYERS: 6
+
+TRAIN:
+  BATCH_SIZE: 16
+  ACCUMULATION_STEPS: 1
+  FLIP: true
+  NUM_JOINTS_HALF_BODY: 8
+  PROB_HALF_BODY: 0.3
+  ROT_FACTOR: 45
+  SCALE_FACTOR: [0.35, 0.35]
+  SHUFFLE: true
+  BEGIN_EPOCH: 0
+  END_EPOCH: 30
+  OPTIMIZER: adamw
+  LR: 0.000005 #0.00001
+  BACKBONE_LR: 0.000005 # 0.000005
+  WEIGHT_DECAY: 0.1
+  BETAS: [0.9, 0.999]
+  GAMMA: 0.99
+  LR_SCHEDULER: "StepLR" # StepLR or CosineAnnealingLR
+  LR_STEP: 5
+  LR_FACTOR: 0.5
+  NESTEROV: false
+  MOTION_AUGMENTATION: false
+
+  AUTO_RESUME: false
+  AUTO_RESUME_PATH: '' # path to the checkpoint
+  EXPERIMENT_DIR: '' # path to the experiment directory
+
+VAL:
+  ANNOT_DIR: "/media/D/code/DcPose_supp_files/posetrack17_annotation_dirs/jsons/val/"
+  COCO_BBOX_FILE: "/media/D/code/DcPose_supp_files/posetrack17_precomputed_boxes/val_boxes.json"
+  USE_GT_BBOX: false  
+  BBOX_THRE: 1.0
+  IMAGE_THRE: 0.2
+  IN_VIS_THRE: 0.2
+  NMS_THRE: 1.0
+  OKS_THRE: 0.9
+  FLIP_VAL: true
+  POST_PROCESS: true
+  BATCH_SIZE: 16
