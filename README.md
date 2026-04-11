@@ -1,6 +1,9 @@
 # Beyond Static Frames: Temporal Aggregate-and-Restore Vision Transformer for Human Pose Estimation
 
-This repo is the official implementation for **Beyond Static Frames: Temporal Aggregate-and-Restore Vision Transformer for Human Pose Estimation**[[arXiv](https://arxiv.org/abs/2603.05929)]. The paper has been accepted to [CVPR 2026](https://cvpr.thecvf.com/Conferences/2026).
+## News
+**2026-04-09**  :star2: TAR-ViTPose has been selected as a **CVPR 2026 Highlight!**
+
+**2026-02-21**  :tada: This repo is the official implementation for **Beyond Static Frames: Temporal Aggregate-and-Restore Vision Transformer for Human Pose Estimation**[[arXiv](https://arxiv.org/abs/2603.05929)]. The paper has been accepted to [CVPR 2026](https://cvpr.thecvf.com/Conferences/2026).
 
 
 
@@ -34,7 +37,7 @@ conda create -n tarvitpose pyhton=3.11.6
 conda activate tarvitpose
 conda install pytorch==2.0.1 torchvision==0.15.2 torchaudio==2.0.2 pytorch-cuda=11.8 -c pytorch -c nvidia
 cd tarvitpose
-pip install -r requirements.txt
+conda env update --file environment.yml
 ```
 
 ## Usage
