@@ -1,9 +1,9 @@
 # Beyond Static Frames: Temporal Aggregate-and-Restore Vision Transformer for Human Pose Estimation
 
 ## News
-**2026-04-09**  :star2: TAR-ViTPose has been selected as a **CVPR 2026 Highlight!**
+**2026-04-09**  :star2:TAR-ViTPose has been selected as a **CVPR 2026 Highlight!**
 
-**2026-02-21**  :tada: This repo is the official implementation for **Beyond Static Frames: Temporal Aggregate-and-Restore Vision Transformer for Human Pose Estimation**[[arXiv](https://arxiv.org/abs/2603.05929)]. The paper has been accepted to [CVPR 2026](https://cvpr.thecvf.com/Conferences/2026).
+**2026-02-21**  :tada:This repo is the official implementation for **Beyond Static Frames: Temporal Aggregate-and-Restore Vision Transformer for Human Pose Estimation**[[arXiv](https://arxiv.org/abs/2603.05929)]. The paper has been accepted to [CVPR 2026](https://cvpr.thecvf.com/Conferences/2026).
 
 
 
