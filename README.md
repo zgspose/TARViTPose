@@ -22,8 +22,8 @@ Here are some qualitative results from both the PoseTrack dataset and real-world
 ![TAR-ViTPose](./demo/qualitative.jpg)
 
 ## Video Demo
-![TAR-ViTPose](./demo/football.gif)
 ![TAR-ViTPose](./demo/compare_demo.gif)
+![TAR-ViTPose](./demo/football.gif)
 
 ## Environment
 
